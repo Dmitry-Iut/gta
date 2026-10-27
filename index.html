@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Кострома-Сити">
+<meta name="theme-color" content="#0e1016">
+<meta name="format-detection" content="telephone=no">
+<title>Кострома-Сити</title>
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Russo+One&family=Rubik:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="c"></canvas>
+<div id="touch"></div>
+
+<div id="hud" hidden>
+  <div id="hurt"></div>
+  <div class="tl">
+    <div id="money">$0</div>
+    <div id="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+    <div id="weap"><span id="weapName">Кулаки</span><b id="weapAmmo"></b></div>
+    <div id="mission">Загрузка…</div>
+  </div>
+  <div class="tr">
+    <canvas id="map" width="236" height="236"></canvas>
+    <div class="hp"><i id="hpbar"></i></div>
+    <div class="hp ar"><i id="arbar"></i></div>
+    <div class="topbtns"><button id="muteBtn" aria-label="Звук">♪</button><button id="pauseBtn" aria-label="Пауза">II</button></div>
+  </div>
+  <div id="toast"></div>
+  <div id="speedo" hidden><b id="kmh">0</b><span>км/ч</span><small id="carhp"></small></div>
+  <div id="joyHint">Левая половина экрана — джойстик<br>Правая — поворот камеры</div>
+  <div class="btns">
+    <button id="btnSwap" class="sm">Сменить</button>
+    <button id="btnHorn" class="sm">Би-би</button>
+    <button id="btnNitro" class="sm">Нитро</button>
+    <button id="btnAct" class="idle">Сесть</button>
+    <button id="btnFire">Удар</button>
+  </div>
+</div>
+
+<div id="shop" class="screen" hidden>
+  <div class="shopbox">
+    <header><h2>Оружейная «Калашный ряд»</h2><div id="shopMoney">$0</div></header>
+    <div id="shopList"></div>
+    <div id="shopMsg"></div>
+    <button id="shopClose" class="cta">Выйти из магазина</button>
+  </div>
+</div>
+<div id="joy"><div id="knob"></div></div>
+
+<div id="start" class="screen">
+  <div class="logo"><span class="a">КОСТРОМА</span><span class="b">СИТИ</span></div>
+  <p class="tag">Открытый город на закате. Угоняй машины, выполняй заказы на время и уходи от полиции.</p>
+  <button id="playBtn" class="cta">Играть</button>
+  <dl class="help">
+    <dt>Ходьба</dt><dd>Палец слева — джойстик, вверх — вперёд</dd>
+    <dt>Машина</dt><dd>Подойди и жми «Сесть». Джойстик вверх — газ, вниз — тормоз и задний ход</dd>
+    <dt>Камера</dt><dd>Води пальцем по правой половине экрана</dd>
+    <dt>Оружие</dt><dd>Зайди в зелёный круг «Оружие», купи ствол. «Огонь» сам наводится на цель перед камерой</dd>
+    <dt>Звёзды</dt><dd>С двух звёзд полиция стреляет. Спрячься подальше, и розыск спадёт</dd>
+  </dl>
+  <div id="record"></div>
+</div>
+
+<div id="over" class="screen" hidden>
+  <div id="overTitle">ПОТРАЧЕНО</div>
+  <div id="overSub"></div>
+  <button id="againBtn" class="cta" hidden>Продолжить</button>
+</div>
+
+<div id="pause" class="screen" hidden>
+  <h2>Пауза</h2>
+  <button id="resumeBtn" class="cta">Продолжить</button>
+  <button id="resetBtn" class="ghost">Начать заново</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

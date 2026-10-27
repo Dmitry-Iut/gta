@@ -1,0 +1,9 @@
+{
+  "name": "Кострома-Сити",
+  "short_name": "Кострома",
+  "start_url": "./index.html",
+  "display": "fullscreen",
+  "orientation": "any",
+  "background_color": "#0e1016",
+  "theme_color": "#0e1016"
+}
